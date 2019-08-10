@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -62,6 +63,9 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
             case ITEM:
                 ListVH listVH = (ListVH) holder;
                 listVH.title.setText(model.getTitle());
+                listVH.ratingBar.setRating(model.getRating());
+                listVH.overview.setText(model.getOverview());
+                listVH.rd.setText(model.getRelease_date());
                 Glide.with(context).load(model.getThumbnail()).into(listVH.icon);
 
                 break;
@@ -101,15 +105,19 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
     public class ListVH extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ExpandableRelativeLayout expandableRelativeLayout;
-        ImageView icon;
-        TextView title;
+        ImageView icon; RatingBar ratingBar;
+        TextView title, overview, rd;
 
         public ListVH(@NonNull View itemView) {
             super(itemView);
             expandableRelativeLayout = itemView.findViewById(R.id.expandableLayout);
             icon = itemView.findViewById(R.id.poster);
             title = itemView.findViewById(R.id.title);
+            overview = itemView.findViewById(R.id.overview);
+            ratingBar = itemView.findViewById(R.id.rating);
+            rd = itemView.findViewById(R.id.release_date);
             expandableRelativeLayout.collapse();
+
             itemView.setOnClickListener(this);
         }
 

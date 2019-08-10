@@ -45,9 +45,10 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         upcoming = rootView.findViewById(R.id.upcoming);
 
         search_btn.setOnClickListener(this);
-        tr.setOnClickListener(this); latest.setOnClickListener(this); popular.setOnClickListener(this); upcoming.setOnClickListener(this);
-
-
+        tr.setOnClickListener(this);
+        latest.setOnClickListener(this);
+        popular.setOnClickListener(this);
+        upcoming.setOnClickListener(this);
 
         return rootView;
     }
@@ -64,7 +65,9 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                               bundle.putString(CommonUtils.FILTER_TYPE, "search");
                               bundle.putString(CommonUtils.KEYWORDS, search_view.getText().toString());
                               SearchResult(bundle);
-                          } else Toast.makeText(getContext(), "Search field can't be empty!", Toast.LENGTH_SHORT).show();
+                          } else {
+                              search_view.setError("Search field can't be empty!");
+                          }
                           break;
         }
     }

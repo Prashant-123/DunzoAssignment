@@ -90,6 +90,7 @@
         android:paddingRight="16dp"
         android:paddingBottom="16dp"
         android:hint="Start Typing ..."
+        android:singleLine="true"
         android:textColorHint="@color/black"
         android:id="@+id/query_et"
         android:elevation="10dp"
@@ -102,6 +103,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="40dp"
         android:id="@+id/search_btn"
+        android:elevation="8dp"
         android:text="Search"/>
 
     <TextView

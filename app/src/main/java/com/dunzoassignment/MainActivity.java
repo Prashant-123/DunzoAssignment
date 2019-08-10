@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    public static final String TAG = "tag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

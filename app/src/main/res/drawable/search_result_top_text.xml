@@ -9,5 +9,5 @@
         android:top="12dp" />
     <corners
         android:radius="4dp" />
-    <solid android:color="@color/grey_700"/>
+    <solid android:color="@color/search_results_info"/>
 </shape>

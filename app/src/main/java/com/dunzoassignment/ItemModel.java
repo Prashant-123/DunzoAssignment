@@ -5,14 +5,14 @@ public class ItemModel {
     public String release_date;
     public String overview;
     public String thumbnail;
+    public float rating;
 
-    public ItemModel() {}
-
-    public ItemModel(String title, String release_date, String overview, String thumbnail) {
+    public ItemModel(String title, String release_date, String overview, String thumbnail, float rating) {
         this.title = title;
         this.release_date = release_date;
         this.overview = overview;
         this.thumbnail = thumbnail;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -44,6 +44,17 @@ public class ItemModel {
     }
 
     public void setThumbnail(String thumbnail) {
-        this.thumbnail = "https://image.tmdb.org/t/p/w400" + thumbnail;
+        this.thumbnail = "https://image.tmdb.org/t/p/w400" +  thumbnail;
     }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public ItemModel() {}
+
 }

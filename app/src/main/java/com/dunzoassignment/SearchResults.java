@@ -2,6 +2,7 @@ package com.dunzoassignment;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class SearchResults extends Fragment {
     private RecyclerView recyclerView;
     private PaginatonListAdapter adapter;
     private ArrayList<ItemModel> list = new ArrayList<>();
-    private String keyword;
+    private String keyword, type = "";
     private ImageView no_result_img;
     private TextView showing_results;
     private MaterialToolbar toolbar;
@@ -77,6 +78,10 @@ public class SearchResults extends Fragment {
         recyclerView.addOnScrollListener(new PaginationScrollListener(linearLayoutManager) {
             @Override
             protected void loadMoreItems() {
+                if (type != "") {
+                    if (type != "search") FilterMovies(type);
+                    else FetchMovies(keyword);
+                }
                 currentPage +=1;
             }
 
@@ -104,7 +109,7 @@ public class SearchResults extends Fragment {
     }
 
     private void handleBundleArguments() {
-        String type = getArguments().getString(CommonUtils.FILTER_TYPE);
+        type = getArguments().getString(CommonUtils.FILTER_TYPE);
         if (type.equals(CommonUtils.TOP_RATED)) FilterMovies(CommonUtils.TOP_RATED); else
         if (type.equals(CommonUtils.NOW_PLAYING)) FilterMovies(CommonUtils.NOW_PLAYING); else
         if (type.equals(CommonUtils.POPULAR)) FilterMovies(CommonUtils.POPULAR); else
@@ -154,9 +159,11 @@ public class SearchResults extends Fragment {
                                         String overview = object.getString("overview");
                                         String release_date = object.getString("release_date");
                                         String thumbnail = object.getString("poster_path");
+                                        float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average")))/2;
 
                                         ItemModel itemModel = new ItemModel();
-                                        itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date); itemModel.setOverview(overview);
+                                        itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date);
+                                        itemModel.setOverview(overview); itemModel.setRating(rating);
                                         list.add(itemModel);
                                         adapter.notifyDataSetChanged();
                                     }
@@ -201,9 +208,11 @@ public class SearchResults extends Fragment {
                                     String overview = object.getString("overview");
                                     String release_date = object.getString("release_date");
                                     String thumbnail = object.getString("poster_path");
+                                    float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average")))/2;
 
                                     ItemModel itemModel = new ItemModel();
-                                    itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date); itemModel.setOverview(overview);
+                                    itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date);
+                                    itemModel.setOverview(overview); itemModel.setRating(rating);
                                     list.add(itemModel);
                                     adapter.notifyDataSetChanged();
                                 }

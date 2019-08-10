@@ -2,10 +2,11 @@
 <resources>
     <color name="colorPrimary">#E6446AEB</color>
     <color name="colorPrimaryDark">#E6274DCF</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#1D44CF</color>
     <color name="cardRipple">#4D1D44CF</color>
 
-    <color name="grey_700">#A43F51B5</color>
+    <color name="search_results_info">#3F51B5</color>
+    <color name="grey">#B3636363</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000</color>
 </resources>
