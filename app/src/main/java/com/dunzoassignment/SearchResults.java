@@ -77,11 +77,11 @@ public class SearchResults extends Fragment {
         recyclerView.addOnScrollListener(new PaginationScrollListener(linearLayoutManager) {
             @Override
             protected void loadMoreItems() {
+                currentPage += 1;
                 if (type != "") {
                     if (type != "search") FilterMovies(type);
                     else FetchMovies(keyword);
                 }
-                currentPage += 1;
             }
 
             @Override
