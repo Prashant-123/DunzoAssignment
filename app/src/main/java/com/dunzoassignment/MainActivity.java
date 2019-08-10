@@ -9,20 +9,23 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String TAG = "tag";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Search();
+        SplashScreen();
 
     }
 
-    public void Search() {
-        Fragment search_fragment = new SearchFragment();
+    public void SplashScreen() {
+        Fragment splashScreen = new SplashScreen();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.main_frame, search_fragment);
+        ft.replace(R.id.main_frame, splashScreen);
         ft.commit();
+        ft.addToBackStack(null);
     }
 
 }

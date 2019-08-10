@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DunzoAssignment</string>
+
+    <string name="text_view_hint"> • Type any keyword to Search. \n • Tap the cards to get Popular &amp; Upcoming movies.</string>
 </resources>

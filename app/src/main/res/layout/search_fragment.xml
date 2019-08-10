@@ -1,38 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@drawable/home_bg">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="16dp"
+        android:weightSum="2">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Action"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:id="@+id/top_rated"
+            app:chipIcon="@drawable/ic_top_rated"
+            app:iconStartPadding="8dp"
+            android:text="Top Rated"/>
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Action"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:id="@+id/latest"
+            app:chipIcon="@drawable/ic_latest"
+            app:iconStartPadding="8dp"
+            android:text="Now Playing"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:weightSum="2">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Action"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:id="@+id/popular"
+            app:chipIcon="@drawable/ic_popular"
+            app:iconStartPadding="8dp"
+            android:text="Popular"/>
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Action"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:id="@+id/upcoming"
+            app:iconStartPadding="8dp"
+            app:chipIcon="@drawable/ic_upcoming"
+            android:text="Upcoming"/>
+
+    </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/search_et_bg"
         android:drawableStart="@drawable/ic_search"
         android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
         android:drawablePadding="20dp"
         android:paddingLeft="64dp"
         android:paddingTop="16dp"
         android:maxLines="1"
         android:paddingRight="16dp"
         android:paddingBottom="16dp"
-        android:hint="Search ..."
+        android:hint="Start Typing ..."
         android:textColorHint="@color/black"
         android:id="@+id/query_et"
+        android:elevation="10dp"
         android:textColor="@color/black" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="40dp"
         android:id="@+id/search_btn"
         android:text="Search"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:fontFamily="@font/futura_medium"
+        android:background="@drawable/tv_border"
+        android:text="@string/text_view_hint"/>
 
 </LinearLayout>

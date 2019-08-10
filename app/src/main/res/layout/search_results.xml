@@ -2,11 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/search_result_bg">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_results"
+        android:layout_gravity="center"
+        android:id="@+id/no_result_image"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Showing results for Neece"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:background="@drawable/search_result_top_text"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:id="@+id/showing_results"
+        android:fontFamily="@font/futura_medium"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:id="@+id/rv"/>
 
 </LinearLayout>

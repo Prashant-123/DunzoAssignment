@@ -8,7 +8,7 @@
     android:clickable="true"
     android:layout_weight="1"
     app:rippleColor="@color/cardRipple"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
     android:checkable="true"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
