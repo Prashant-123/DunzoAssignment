@@ -57,6 +57,9 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
         switch (getItemViewType(position)) {
             case ITEM:
                 ListVH listVH = (ListVH) holder;
+
+                listVH.expandableRelativeLayout.setExpanded(model.isExpanded());
+
                 listVH.title.setText(model.getTitle());
                 listVH.ratingBar.setRating(model.getRating());
                 listVH.overview.setText(model.getOverview());
@@ -119,7 +122,14 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         @Override
         public void onClick(View view) {
-            expandableRelativeLayout.toggle();
+
+            if (!list.get(getAdapterPosition()).isExpanded()){
+                expandableRelativeLayout.expand();
+                list.get(getAdapterPosition()).setExpanded(true);
+            } else {
+                expandableRelativeLayout.toggle();
+                list.get(getAdapterPosition()).setExpanded(false);
+            }
         }
     }
 

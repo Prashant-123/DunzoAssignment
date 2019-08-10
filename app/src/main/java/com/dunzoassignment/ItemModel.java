@@ -6,13 +6,23 @@ public class ItemModel {
     public String overview;
     public String thumbnail;
     public float rating;
+    public boolean isExpanded;
 
-    public ItemModel(String title, String release_date, String overview, String thumbnail, float rating) {
+    public ItemModel(String title, String release_date, String overview, String thumbnail, float rating, boolean isExpanded) {
         this.title = title;
         this.release_date = release_date;
         this.overview = overview;
         this.thumbnail = thumbnail;
         this.rating = rating;
+        this.isExpanded = isExpanded;
+    }
+
+    public boolean isExpanded() {
+        return isExpanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        isExpanded = expanded;
     }
 
     public String getTitle() {

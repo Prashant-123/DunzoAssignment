@@ -64,7 +64,6 @@
             android:id="@+id/expandableLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:ael_expanded="false"
             app:ael_duration="500"
             app:ael_interpolator="fastOutSlowIn"
             app:ael_orientation="vertical">
