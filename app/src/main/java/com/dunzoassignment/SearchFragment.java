@@ -76,6 +76,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         Fragment searchResults = new SearchResults();
         searchResults.setArguments(bundle);
+        ft.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
         ft.replace(R.id.main_frame, searchResults);
         ft.commit();
         ft.addToBackStack(null);

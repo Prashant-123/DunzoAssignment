@@ -27,6 +27,7 @@ public class SplashScreen extends Fragment {
             @Override
             public void run() {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
                 ft.replace(R.id.main_frame, new SearchFragment());
                 ft.commit();
             }
