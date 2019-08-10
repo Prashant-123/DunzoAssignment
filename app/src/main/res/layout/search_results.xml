@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/search_result_bg">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:src="@drawable/no_results"
         android:layout_gravity="center"
         android:id="@+id/no_result_image"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="match_parent"
@@ -27,12 +27,12 @@
         android:gravity="center"
         android:id="@+id/showing_results"
         android:fontFamily="@font/futura_medium"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:id="@+id/rv"/>
+        android:id="@+id/rv" />
 
 </LinearLayout>

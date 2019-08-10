@@ -1,18 +1,14 @@
 package com.dunzoassignment;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.button.MaterialButton;
@@ -20,7 +16,8 @@ import com.google.android.material.chip.Chip;
 
 public class SearchFragment extends Fragment implements View.OnClickListener {
 
-    public SearchFragment(){}
+    public SearchFragment() {
+    }
 
     private EditText search_view;
     private MaterialButton search_btn;
@@ -56,19 +53,31 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.top_rated: bundle.putString(CommonUtils.FILTER_TYPE, "top_rated"); SearchResult(bundle); break;
-            case R.id.latest: bundle.putString(CommonUtils.FILTER_TYPE, "now_playing"); SearchResult(bundle); break;
-            case R.id.popular: bundle.putString(CommonUtils.FILTER_TYPE, "popular"); SearchResult(bundle); break;
-            case R.id.upcoming: bundle.putString(CommonUtils.FILTER_TYPE, "upcoming"); SearchResult(bundle); break;
+            case R.id.top_rated:
+                bundle.putString(CommonUtils.FILTER_TYPE, "top_rated");
+                SearchResult(bundle);
+                break;
+            case R.id.latest:
+                bundle.putString(CommonUtils.FILTER_TYPE, "now_playing");
+                SearchResult(bundle);
+                break;
+            case R.id.popular:
+                bundle.putString(CommonUtils.FILTER_TYPE, "popular");
+                SearchResult(bundle);
+                break;
+            case R.id.upcoming:
+                bundle.putString(CommonUtils.FILTER_TYPE, "upcoming");
+                SearchResult(bundle);
+                break;
             case R.id.search_btn:
-                          if (!search_view.getText().toString().isEmpty()) {
-                              bundle.putString(CommonUtils.FILTER_TYPE, "search");
-                              bundle.putString(CommonUtils.KEYWORDS, search_view.getText().toString());
-                              SearchResult(bundle);
-                          } else {
-                              search_view.setError("Search field can't be empty!");
-                          }
-                          break;
+                if (!search_view.getText().toString().isEmpty()) {
+                    bundle.putString(CommonUtils.FILTER_TYPE, "search");
+                    bundle.putString(CommonUtils.KEYWORDS, search_view.getText().toString());
+                    SearchResult(bundle);
+                } else {
+                    search_view.setError("Search field can't be empty!");
+                }
+                break;
         }
     }
 

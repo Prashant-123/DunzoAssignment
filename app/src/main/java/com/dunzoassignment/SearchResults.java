@@ -2,7 +2,6 @@ package com.dunzoassignment;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +81,7 @@ public class SearchResults extends Fragment {
                     if (type != "search") FilterMovies(type);
                     else FetchMovies(keyword);
                 }
-                currentPage +=1;
+                currentPage += 1;
             }
 
             @Override
@@ -110,10 +109,11 @@ public class SearchResults extends Fragment {
 
     private void handleBundleArguments() {
         type = getArguments().getString(CommonUtils.FILTER_TYPE);
-        if (type.equals(CommonUtils.TOP_RATED)) FilterMovies(CommonUtils.TOP_RATED); else
-        if (type.equals(CommonUtils.NOW_PLAYING)) FilterMovies(CommonUtils.NOW_PLAYING); else
-        if (type.equals(CommonUtils.POPULAR)) FilterMovies(CommonUtils.POPULAR); else
-        if (type.equals(CommonUtils.UPCOMING)) FilterMovies(CommonUtils.UPCOMING); else {
+        if (type.equals(CommonUtils.TOP_RATED)) FilterMovies(CommonUtils.TOP_RATED);
+        else if (type.equals(CommonUtils.NOW_PLAYING)) FilterMovies(CommonUtils.NOW_PLAYING);
+        else if (type.equals(CommonUtils.POPULAR)) FilterMovies(CommonUtils.POPULAR);
+        else if (type.equals(CommonUtils.UPCOMING)) FilterMovies(CommonUtils.UPCOMING);
+        else {
             keyword = getArguments().getString(CommonUtils.KEYWORDS);
             FetchMovies(keyword);
         }
@@ -121,7 +121,7 @@ public class SearchResults extends Fragment {
 
     private void _SetupToolbar(View view) {
         toolbar = view.findViewById(R.id.toolbar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,51 +134,55 @@ public class SearchResults extends Fragment {
 
     public void FetchMovies(final String query) {
 
-            AndroidNetworking.get(CommonUtils.SEARCH_URL)
-                    .addPathParameter(CommonUtils.QUERY, query)
-                    .addPathParameter(CommonUtils.PAGE_NO, String.valueOf(currentPage))
-                    .build()
-                    .getAsJSONObject(new JSONObjectRequestListener() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            try {
-                                hideProcessDialog();
-                                total_results = response.getInt("total_results");
+        AndroidNetworking.get(CommonUtils.SEARCH_URL)
+                .addPathParameter(CommonUtils.QUERY, query)
+                .addPathParameter(CommonUtils.PAGE_NO, String.valueOf(currentPage))
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            hideProcessDialog();
+                            total_results = response.getInt("total_results");
 
-                                if (total_results == 0)
-                                    no_result_img.setVisibility(View.VISIBLE);
-                                else {
-                                    showing_results.setVisibility(View.VISIBLE);
-                                    showing_results.setText("Showing " + total_results + " results for \"" + query + "\"");
-                                    TOTAL_PAGES = response.getInt("total_pages");
-                                    JSONArray results = response.getJSONArray("results");
-                                    for (int i=0; i<results.length(); i++) {
+                            if (total_results == 0)
+                                no_result_img.setVisibility(View.VISIBLE);
+                            else {
+                                showing_results.setVisibility(View.VISIBLE);
+                                showing_results.setText("Showing " + total_results + " results for \"" + query + "\"");
+                                TOTAL_PAGES = response.getInt("total_pages");
+                                JSONArray results = response.getJSONArray("results");
+                                for (int i = 0; i < results.length(); i++) {
 
-                                        JSONObject object = results.getJSONObject(i);
-                                        String title = object.getString("title");
-                                        String overview = object.getString("overview");
-                                        String release_date = object.getString("release_date");
-                                        String thumbnail = object.getString("poster_path");
-                                        float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average")))/2;
+                                    JSONObject object = results.getJSONObject(i);
+                                    String title = object.getString("title");
+                                    String overview = object.getString("overview");
+                                    String release_date = object.getString("release_date");
+                                    String thumbnail = object.getString("poster_path");
+                                    float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average"))) / 2;
 
-                                        ItemModel itemModel = new ItemModel();
-                                        itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date);
-                                        itemModel.setOverview(overview); itemModel.setRating(rating);
-                                        list.add(itemModel);
-                                        adapter.notifyDataSetChanged();
-                                    }
-
-                                    if (currentPage == TOTAL_PAGES) adapter.removeLoadingFooter();
+                                    ItemModel itemModel = new ItemModel();
+                                    itemModel.setTitle(title);
+                                    itemModel.setThumbnail(thumbnail);
+                                    itemModel.setRelease_date(release_date);
+                                    itemModel.setOverview(overview);
+                                    itemModel.setRating(rating);
+                                    list.add(itemModel);
+                                    adapter.notifyDataSetChanged();
                                 }
 
-                            } catch (Exception e){
-                                e.printStackTrace();
+                                if (currentPage == TOTAL_PAGES) adapter.removeLoadingFooter();
                             }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        @Override
-                        public void onError(ANError anError) {
-                        }
-                    });
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                    }
+                });
     }
 
     public void FilterMovies(final String type) {
@@ -201,18 +205,21 @@ public class SearchResults extends Fragment {
                                 showing_results.setText("Showing " + total_results + " results for \"" + type.toUpperCase().replace("_", " ") + "\"");
                                 TOTAL_PAGES = response.getInt("total_pages");
                                 JSONArray results = response.getJSONArray("results");
-                                for (int i=0; i<results.length(); i++) {
+                                for (int i = 0; i < results.length(); i++) {
 
                                     JSONObject object = results.getJSONObject(i);
                                     String title = object.getString("title");
                                     String overview = object.getString("overview");
                                     String release_date = object.getString("release_date");
                                     String thumbnail = object.getString("poster_path");
-                                    float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average")))/2;
+                                    float rating = Float.parseFloat(String.valueOf(object.getDouble("vote_average"))) / 2;
 
                                     ItemModel itemModel = new ItemModel();
-                                    itemModel.setTitle(title); itemModel.setThumbnail(thumbnail); itemModel.setRelease_date(release_date);
-                                    itemModel.setOverview(overview); itemModel.setRating(rating);
+                                    itemModel.setTitle(title);
+                                    itemModel.setThumbnail(thumbnail);
+                                    itemModel.setRelease_date(release_date);
+                                    itemModel.setOverview(overview);
+                                    itemModel.setRating(rating);
                                     list.add(itemModel);
                                     adapter.notifyDataSetChanged();
                                 }
@@ -220,10 +227,11 @@ public class SearchResults extends Fragment {
                                 if (currentPage == TOTAL_PAGES) adapter.removeLoadingFooter();
                             }
 
-                        } catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
+
                     @Override
                     public void onError(ANError anError) {
                     }

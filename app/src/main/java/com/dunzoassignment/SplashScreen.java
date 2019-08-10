@@ -12,10 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
-
 public class SplashScreen extends Fragment {
 
-    public static int SPLASH_TIME = 00;
+    public static int SPLASH_TIME = 1200;
 
     @Nullable
     @Override

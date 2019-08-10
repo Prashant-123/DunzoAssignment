@@ -1,7 +1,6 @@
 package com.dunzoassignment;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -31,7 +26,7 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     private ArrayList<ItemModel> list;
 
-    public PaginatonListAdapter(Context context, ArrayList<ItemModel> list){
+    public PaginatonListAdapter(Context context, ArrayList<ItemModel> list) {
         this.list = list;
         this.context = context;
     }
@@ -105,7 +100,8 @@ public class PaginatonListAdapter extends RecyclerView.Adapter<RecyclerView.View
     public class ListVH extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ExpandableRelativeLayout expandableRelativeLayout;
-        ImageView icon; RatingBar ratingBar;
+        ImageView icon;
+        RatingBar ratingBar;
         TextView title, overview, rd;
 
         public ListVH(@NonNull View itemView) {

@@ -1,11 +1,7 @@
 package com.dunzoassignment;
 
-import android.util.Log;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public abstract class PaginationScrollListener extends RecyclerView.OnScrollListener {
 

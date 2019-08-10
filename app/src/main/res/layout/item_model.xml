@@ -47,13 +47,14 @@
                     android:textSize="18sp"
                     android:id="@+id/title"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/futura_medium"/>
+                    android:fontFamily="@font/futura_medium" />
+
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:id="@+id/rating"
-                    style="@style/Widget.AppCompat.RatingBar.Small"/>
+                    style="@style/Widget.AppCompat.RatingBar.Small" />
 
             </LinearLayout>
 
@@ -68,49 +69,51 @@
             app:ael_interpolator="fastOutSlowIn"
             app:ael_orientation="vertical">
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="18sp"
-               android:layout_marginRight="18sp"
-               android:layout_marginTop="8dp"
-               android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18sp"
+                android:layout_marginRight="18sp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/overview"
-                   android:textStyle="bold"
-                   android:fontFamily="@font/montserrat"
-                   android:textColor="@color/colorAccent"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="24dp"
-                   android:textStyle="bold"
-                   android:id="@+id/overview"
-                   android:fontFamily="@font/montserrat"
-                   android:textColor="@color/grey"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/overview"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/colorAccent" />
 
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/montserrat"
-                   android:text="@string/release_date"
-                   android:textColor="@color/colorAccent"
-                   android:layout_marginTop="8dp"
-                   android:textStyle="bold" />
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:id="@+id/release_date"
-                   android:layout_marginLeft="16dp"
-                   android:textStyle="bold"
-                   android:fontFamily="@font/montserrat"
-                   android:layout_marginBottom="16dp"
-                   android:textColor="@color/grey"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:textStyle="bold"
+                    android:id="@+id/overview"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/grey" />
 
-           </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/release_date"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/release_date"
+                    android:layout_marginLeft="16dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/grey" />
+
+            </LinearLayout>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 

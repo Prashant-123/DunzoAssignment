@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/home_bg">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,8 @@
             android:id="@+id/top_rated"
             app:chipIcon="@drawable/ic_top_rated"
             app:iconStartPadding="8dp"
-            android:text="Top Rated"/>
+            android:text="Top Rated" />
+
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Action"
             android:layout_width="0dp"
@@ -38,9 +39,10 @@
             android:id="@+id/latest"
             app:chipIcon="@drawable/ic_latest"
             app:iconStartPadding="8dp"
-            android:text="Now Playing"/>
+            android:text="Now Playing" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +61,8 @@
             android:id="@+id/popular"
             app:chipIcon="@drawable/ic_popular"
             app:iconStartPadding="8dp"
-            android:text="Popular"/>
+            android:text="Popular" />
+
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Action"
             android:layout_width="0dp"
@@ -70,7 +73,7 @@
             android:id="@+id/upcoming"
             app:iconStartPadding="8dp"
             app:chipIcon="@drawable/ic_upcoming"
-            android:text="Upcoming"/>
+            android:text="Upcoming" />
 
     </LinearLayout>
 
@@ -104,7 +107,7 @@
         android:layout_marginRight="40dp"
         android:id="@+id/search_btn"
         android:elevation="8dp"
-        android:text="Search"/>
+        android:text="Search" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -115,6 +118,6 @@
         android:layout_marginRight="48dp"
         android:fontFamily="@font/futura_medium"
         android:background="@drawable/tv_border"
-        android:text="@string/text_view_hint"/>
+        android:text="@string/text_view_hint" />
 
 </LinearLayout>

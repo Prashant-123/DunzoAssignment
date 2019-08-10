@@ -44,7 +44,7 @@ public class ItemModel {
     }
 
     public void setThumbnail(String thumbnail) {
-        this.thumbnail = "https://image.tmdb.org/t/p/w400" +  thumbnail;
+        this.thumbnail = "https://image.tmdb.org/t/p/w400" + thumbnail;
     }
 
     public float getRating() {
@@ -55,6 +55,7 @@ public class ItemModel {
         this.rating = rating;
     }
 
-    public ItemModel() {}
+    public ItemModel() {
+    }
 
 }
