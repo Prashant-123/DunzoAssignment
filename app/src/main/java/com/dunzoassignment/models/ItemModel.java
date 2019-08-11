@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.models;
 
 public class ItemModel {
     public String title;

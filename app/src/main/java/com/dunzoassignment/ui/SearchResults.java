@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.ui;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -18,6 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.dunzoassignment.models.ItemModel;
+import com.dunzoassignment.utils.PaginationScrollListener;
+import com.dunzoassignment.adaters.PaginatonListAdapter;
+import com.dunzoassignment.R;
+import com.dunzoassignment.utils.CommonUtils;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import org.json.JSONArray;

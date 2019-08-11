@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.adaters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.dunzoassignment.models.ItemModel;
+import com.dunzoassignment.R;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
 import java.util.ArrayList;

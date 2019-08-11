@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.utils;
 
 public class CommonUtils {
 

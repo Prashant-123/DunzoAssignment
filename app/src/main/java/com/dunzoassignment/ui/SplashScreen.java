@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.ui;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.dunzoassignment.R;
 
 
 public class SplashScreen extends Fragment {

@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.dunzoassignment.R;
+import com.dunzoassignment.utils.CommonUtils;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 

@@ -1,4 +1,4 @@
-package com.dunzoassignment;
+package com.dunzoassignment.utils;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
