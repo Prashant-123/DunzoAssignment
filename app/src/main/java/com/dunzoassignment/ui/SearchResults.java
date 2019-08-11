@@ -20,7 +20,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.dunzoassignment.models.ItemModel;
 import com.dunzoassignment.utils.PaginationScrollListener;
-import com.dunzoassignment.adaters.PaginatonListAdapter;
+import com.dunzoassignment.adapters.PaginatonListAdapter;
 import com.dunzoassignment.R;
 import com.dunzoassignment.utils.CommonUtils;
 import com.google.android.material.appbar.MaterialToolbar;

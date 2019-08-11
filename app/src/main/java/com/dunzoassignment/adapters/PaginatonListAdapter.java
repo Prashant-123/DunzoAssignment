@@ -1,4 +1,4 @@
-package com.dunzoassignment.adaters;
+package com.dunzoassignment.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
